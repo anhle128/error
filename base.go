@@ -1,10 +1,12 @@
 package error
 
+import "strconv"
+
 // Message error
 type Message struct {
 	Message         string `json:"message,omitempty"`
 	InternalMessage string `json:"internal-message,omitempty"`
-	Code            int    `json:"code,omitempty"`
+	ErrorCode       string `json:"code,omitempty"`
 }
 
 // Error - return message
@@ -19,5 +21,6 @@ func (b Message) InternalError() string {
 
 // HTTPCode - return code
 func (b Message) HTTPCode() int {
-	return b.Code
+	httpCode, _ := strconv.Atoi(b.ErrorCode[:3])
+	return httpCode
 }
