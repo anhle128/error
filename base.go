@@ -19,13 +19,13 @@ func (b *Message) InternalError() string {
 	return b.InternalMessage
 }
 
-// HTTPCode - return code
-func (b *Message) HTTPCode() int {
+// GetHTTPCode - return code
+func (b *Message) GetHTTPCode() int {
 	httpCode, _ := strconv.Atoi(b.ErrorCode[:3])
 	return httpCode
 }
 
-// Code - return error code
-func (b *Message) Code() string {
+// GetErrorCode - return error code
+func (b *Message) GetErrorCode() string {
 	return b.ErrorCode
 }
