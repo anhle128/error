@@ -5,4 +5,5 @@ type IError interface {
 	error
 	InternalError() string
 	HTTPCode() int
+	GetErrorCode() string
 }
