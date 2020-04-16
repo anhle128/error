@@ -5,8 +5,8 @@ import "strconv"
 // Message error
 type Message struct {
 	Message         string `json:"message,omitempty"`
-	InternalMessage string `json:"internal-message,omitempty"`
-	ErrorCode       string `json:"code,omitempty"`
+	InternalMessage string `json:"internal_message,omitempty"`
+	ErrorCode       string `json:"error_code,omitempty"`
 }
 
 // Error - return message
