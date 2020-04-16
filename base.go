@@ -10,17 +10,22 @@ type Message struct {
 }
 
 // Error - return message
-func (b Message) Error() string {
+func (b *Message) Error() string {
 	return b.Message
 }
 
 // InternalError - return internal message
-func (b Message) InternalError() string {
+func (b *Message) InternalError() string {
 	return b.InternalMessage
 }
 
 // HTTPCode - return code
-func (b Message) HTTPCode() int {
+func (b *Message) HTTPCode() int {
 	httpCode, _ := strconv.Atoi(b.ErrorCode[:3])
 	return httpCode
+}
+
+// Code - return error code
+func (b *Message) Code() string {
+	return b.ErrorCode
 }
